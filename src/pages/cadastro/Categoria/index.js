@@ -36,7 +36,10 @@ function CadastroCategoria() {
   };
 
   useEffect(() => {
-    const URL = 'http://localhost:8080/categorias';
+    const URL = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categorias'
+      : 'https://mathflix-api.herokuapp.com/categorias';
+
     const getCategorias = async () => {
       const data = await fetch(URL);
       const resposta = await data.json();
