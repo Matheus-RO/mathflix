@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import TemplateBase from '../../../components/TemplateBase';
 import FormField from '../../../components/FormField';
-import { Link } from 'react-router-dom';
+import Button from '../../../components/Button';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -34,6 +35,19 @@ function CadastroCategoria() {
     setValue(event.target.getAttribute('name'), value);
   };
 
+  useEffect(() => {
+    const URL = 'http://localhost:8080/categorias';
+    const getCategorias = async () => {
+      const data = await fetch(URL);
+      const resposta = await data.json();
+      setCategorias([
+        ...resposta,
+      ]);
+    };
+
+    getCategorias();
+  }, []);
+
   const { nome, descricao, cor } = values;
   return (
     <TemplateBase>
@@ -48,17 +62,13 @@ function CadastroCategoria() {
           type="text"
         />
 
-        <div>
-          <label>
-            Descrição:
-            <textarea
-              type="text"
-              name="descricao"
-              onChange={handleInputChange}
-              value={descricao}
-            />
-          </label>
-        </div>
+        <FormField
+          label="Descrição:"
+          value={descricao}
+          onChange={handleInputChange}
+          name="descricao"
+          type="textarea"
+        />
 
         <FormField
           label="Cor:"
@@ -68,13 +78,17 @@ function CadastroCategoria() {
           type="color"
         />
 
-        <button type="submit">Cadastrar</button>
+        <Button>Cadastrar</Button>
       </form>
 
+      {categorias.length === 0 && (
+        <div>
+          Carregando...
+        </div>
+      )}
+
       <ul>
-        {categorias.map((categoria, index) => {
-          return <li key={`${index}_${categoria}`}>{categoria.nome}</li>;
-        })}
+        {categorias.map((categoria, index) => <li key={`${index}_${categoria}`}>{categoria.titulo}</li>)}
       </ul>
 
       <Link to="/">Ir para Home</Link>
