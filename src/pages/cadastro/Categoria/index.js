@@ -1,28 +1,40 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import TemplateBase from '../../../components/TemplateBase';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
 import categoriasRepository from '../../../repositories/categorias';
+import Table from '../../../components/Table';
 
 function CadastroCategoria() {
   const valoresIniciais = {
-    nome: '',
+    titulo: '',
     descricao: '',
     cor: '#000000',
   };
 
   const { handleInputChange, values, clearForm } = useForm(valoresIniciais);
-
   const [categorias, setCategorias] = useState([]);
+
+  const { titulo, descricao, cor } = values;
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    if (values === '') return;
+    if (!values || values.length === 0) return;
 
-    setCategorias([...categorias, values]);
+    categoriasRepository.create({
+      titulo,
+      descricao,
+      cor,
+    })
+      .then((resposta) => {
+        setCategorias([...categorias, resposta]);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     clearForm(valoresIniciais);
   };
 
@@ -32,14 +44,12 @@ function CadastroCategoria() {
         setCategorias([
           ...categoriasResposta,
         ]);
-        console.log(categoriasResposta);
       })
       .catch((err) => {
         console.log(err.message);
       });
   }, []);
 
-  const { titulo, descricao, cor } = values;
   return (
     <TemplateBase>
       <h1>Cadastro de Categoria</h1>
@@ -49,7 +59,7 @@ function CadastroCategoria() {
           label="Nome da Categoria:"
           value={titulo}
           onChange={handleInputChange}
-          name="nome"
+          name="titulo"
           type="text"
         />
 
@@ -69,7 +79,7 @@ function CadastroCategoria() {
           type="color"
         />
 
-        <Button>Cadastrar</Button>
+        <Button>Salvar</Button>
       </form>
 
       {categorias.length === 0 && (
@@ -78,11 +88,7 @@ function CadastroCategoria() {
         </div>
       )}
 
-      <ul>
-        {categorias.map((categoria) => <li key={categoria.id}>{categoria.titulo}</li>)}
-      </ul>
-
-      <Link to="/">Ir para Home</Link>
+      <Table categorias={categorias} />
     </TemplateBase>
   );
 }

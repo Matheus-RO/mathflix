@@ -4,6 +4,7 @@
       "id": 1,
       "titulo": "Front End",
       "cor": "#6BD1FF",
+      "descricao": "Vídeos interesantes sobre Front-End",
       "link_extra": {
         "text": "Formação de Front End na Alura",
         "url": "https://www.alura.com.br/cursos-online-front-end"
@@ -13,6 +14,7 @@
       "id": 2,
       "titulo": "Back End",
       "cor": "#00C86F",
+      "descricao": "Vídeos que estudei sobre Back-End",
       "link_extra": {
         "text": "Cursos de Back End na Alura",
         "url": "https://www.alura.com.br/cursos-online-programacao"
@@ -22,6 +24,7 @@
       "id": 3,
       "titulo": "Data Science e Inteligência Artificial",
       "cor": "#9cd33b",
+      "descricao": "Conteúdo de R e Python",
       "link_extra": {
         "text": "Cursos de Data Science na Alura",
         "url": "https://www.alura.com.br/cursos-online-mobile"
@@ -30,16 +33,24 @@
     {
       "id": 4,
       "titulo": "Filmes",
-      "cor": "orange"
+      "cor": "orange",
+      "descricao": "Filmes favoritos"
     },
     {
       "id": 5,
       "titulo": "Games",
       "cor": "red",
+      "descricao": "Vídeos de games favoritos e gameplays",
       "link_extra": {
         "text": "Formação de Jogos na Alura",
         "url": "https://www.alura.com.br/cursos-online-front-end"
       }
+    },
+    {
+      "titulo": "Séries",
+      "descricao": "Séries favoritas",
+      "cor": "#65e674",
+      "id": 6
     }
   ],
   "videos": [

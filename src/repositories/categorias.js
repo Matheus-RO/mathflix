@@ -21,7 +21,25 @@ const getAll = async () => {
   throw new Error('Falha ao comunicar com o servidor');
 };
 
+const create = async (data) => {
+  const response = await fetch(CATEGORIES_URL, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (response.ok) {
+    const resposta = await response.json();
+    return resposta;
+  }
+
+  throw new Error('Não foi possível cadastrar os dados');
+};
+
 export default {
   getAllWithVideos,
   getAll,
+  create,
 };
