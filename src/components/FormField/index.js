@@ -34,25 +34,25 @@ Label.Text = styled.span`
  `;
 
 const Input = styled.input`
-background: #53585D;
+  background: #53585D;
   color: #F5F5F5;
   display: block;
   width: 100%;
   height: 57px;
   font-size: 18px;
-  
+
   outline: 0;
   border: 0;
   border-top: 4px solid transparent;
   border-bottom: 4px solid #53585D;
-  
+
   padding: 16px 16px;
   margin-bottom: 45px;
-  
+
   resize: none;
   border-radius: 4px;
   transition: border-color .3s;
-  
+
   &:focus {
     border-bottom-color: var(--primary);
   }
@@ -72,12 +72,13 @@ background: #53585D;
 `;
 
 function FormField({
-  label, value, type, name, onChange,
+  label, value, type, name, onChange, suggestions,
 }) {
   const fieldId = `id_${name}`;
   const isTextArea = type === 'textarea';
   const tag = isTextArea ? 'textarea' : 'input';
 
+  const hasSuggestions = suggestions.length > 0;
   return (
     <FormFieldWrapper>
       <Label htmlFor={fieldId}>
@@ -87,10 +88,23 @@ function FormField({
           name={name}
           onChange={onChange}
           value={value}
+          autoComplete={hasSuggestions ? 'off' : 'on'}
+          list={hasSuggestions ? `suggestionFor_${fieldId}` : undefined}
         />
         <Label.Text>
           {label}
         </Label.Text>
+        {hasSuggestions && (
+          <datalist id={`suggestionFor_${fieldId}`}>
+            {
+              suggestions.map((suggestion) => (
+                <option value={suggestion} key={`suggestionFor_${fieldId}_option_${suggestion}`}>
+                  {suggestion}
+                </option>
+              ))
+            }
+          </datalist>
+        )}
       </Label>
     </FormFieldWrapper>
   );
@@ -100,6 +114,7 @@ FormField.defaultProps = {
   type: 'text',
   value: '',
   onChange: () => { },
+  suggestions: [],
 };
 
 FormField.propTypes = {
@@ -108,6 +123,7 @@ FormField.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string,
   onChange: PropTypes.func,
+  suggestions: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default FormField;

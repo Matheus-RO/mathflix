@@ -186,6 +186,18 @@
       "categoriaId": 5,
       "titulo": "Resident Evil 8",
       "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
+    },
+    {
+      "titulo": "Acelerando a produtividade no VSCode",
+      "url": "https://www.youtube.com/watch?v=FCC2GbStmfc",
+      "categoriaId": 1,
+      "id": 25
+    },
+    {
+      "titulo": "Gameplay de God Of War 4 no Jovem Nerd",
+      "url": "https://www.youtube.com/watch?v=Cu8UtLzwCWo",
+      "categoriaId": 5,
+      "id": 26
     }
   ]
 }

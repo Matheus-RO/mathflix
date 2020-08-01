@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import TemplateBase from '../../../components/TemplateBase';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
+import categoriasRepository from '../../../repositories/categorias';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -11,15 +13,9 @@ function CadastroCategoria() {
     cor: '#000000',
   };
 
-  const [categorias, setCategorias] = useState([]);
-  const [values, setValues] = useState(valoresIniciais);
+  const { handleInputChange, values, clearForm } = useForm(valoresIniciais);
 
-  function setValue(chave, valor) {
-    setValues({
-      ...values,
-      [chave]: valor,
-    });
-  }
+  const [categorias, setCategorias] = useState([]);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -27,31 +23,23 @@ function CadastroCategoria() {
     if (values === '') return;
 
     setCategorias([...categorias, values]);
-    setValues(valoresIniciais);
-  };
-
-  const handleInputChange = (event) => {
-    const { value } = event.target;
-    setValue(event.target.getAttribute('name'), value);
+    clearForm(valoresIniciais);
   };
 
   useEffect(() => {
-    const URL = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categorias'
-      : 'https://mathflix-api.herokuapp.com/categorias';
-
-    const getCategorias = async () => {
-      const data = await fetch(URL);
-      const resposta = await data.json();
-      setCategorias([
-        ...resposta,
-      ]);
-    };
-
-    getCategorias();
+    categoriasRepository.getAll()
+      .then((categoriasResposta) => {
+        setCategorias([
+          ...categoriasResposta,
+        ]);
+        console.log(categoriasResposta);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   }, []);
 
-  const { nome, descricao, cor } = values;
+  const { titulo, descricao, cor } = values;
   return (
     <TemplateBase>
       <h1>Cadastro de Categoria</h1>
@@ -59,7 +47,7 @@ function CadastroCategoria() {
       <form onSubmit={handleFormSubmit}>
         <FormField
           label="Nome da Categoria:"
-          value={nome}
+          value={titulo}
           onChange={handleInputChange}
           name="nome"
           type="text"
@@ -91,7 +79,7 @@ function CadastroCategoria() {
       )}
 
       <ul>
-        {categorias.map((categoria, index) => <li key={`${index}_${categoria}`}>{categoria.titulo}</li>)}
+        {categorias.map((categoria) => <li key={categoria.id}>{categoria.titulo}</li>)}
       </ul>
 
       <Link to="/">Ir para Home</Link>
