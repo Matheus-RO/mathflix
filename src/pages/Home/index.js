@@ -3,6 +3,7 @@ import BannerMain from '../../components/BannerMain';
 import Carousel from '../../components/Carousel';
 import TemplateBase from '../../components/TemplateBase';
 import categoriasRepository from '../../repositories/categorias';
+import Spinner from '../../components/Spinner';
 
 function Home() {
   const [dadosIniciais, setDadosIniciais] = useState([]);
@@ -19,8 +20,7 @@ function Home() {
 
   return (
     <TemplateBase paddingAll={0}>
-
-      {dadosIniciais.length === 0 && (<div>Carregando...</div>)}
+      {dadosIniciais.length === 0 && (<Spinner />)}
 
       {dadosIniciais.map((categoria, index) => {
         if (index === 0) {

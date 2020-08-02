@@ -5,6 +5,7 @@ import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
 import categoriasRepository from '../../../repositories/categorias';
 import Table from '../../../components/Table';
+import Spinner from '../../../components/Spinner';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -83,9 +84,7 @@ function CadastroCategoria() {
       </form>
 
       {categorias.length === 0 && (
-        <div>
-          Carregando...
-        </div>
+        <Spinner />
       )}
 
       <Table categorias={categorias} />
