@@ -72,7 +72,7 @@ function CadastroVideo() {
           type="text"
           suggestions={categoryTitles}
         />
-        <Button type="submit">Cadastrar</Button>
+        <Button type="submit" buttonColor="#2a7ae4">Cadastrar</Button>
       </form>
 
       <Link to="/cadastro/categoria">Cadastrar Categoria</Link>

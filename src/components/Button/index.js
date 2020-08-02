@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Button = styled.button`
   color: var(--white);
@@ -18,5 +18,13 @@ const Button = styled.button`
   &:focus {
     opacity: 0.5;
   }
+  /* background-color: var(--primary); */
+  ${({ buttonColor }) => {
+    const hasColor = buttonColor !== '';
+
+    return hasColor && css`
+        background-color: ${buttonColor};
+    `;
+  }}
 `;
 export default Button;

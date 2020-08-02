@@ -129,7 +129,7 @@ function CadastroCategoria() {
           type="color"
         />
 
-        <Button>Salvar</Button>
+        <Button buttonColor="#2a7ae4">Salvar</Button>
       </form>
 
       {categorias.length === 0 && (
