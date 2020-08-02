@@ -50,9 +50,9 @@ function Table({ categorias, onActionClick }) {
       <TableParent>
         <TableHead>
           <tr>
-            <td style={{ width: '30%' }}>Nome</td>
-            <td style={{ width: '60%' }}>Descrição</td>
-            <td style={{ width: '10%' }}>Ações</td>
+            <td style={{ width: '20%' }}>Nome</td>
+            <td style={{ width: '73%' }}>Descrição</td>
+            <td style={{ width: '7%' }}>Ações</td>
           </tr>
         </TableHead>
         <tbody>
