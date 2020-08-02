@@ -22,5 +22,6 @@ export default function useForm(valoresIniciais) {
     values,
     handleInputChange,
     clearForm,
+    setValues,
   };
 }

@@ -14,8 +14,12 @@ function CadastroCategoria() {
     cor: '#000000',
   };
 
-  const { handleInputChange, values, clearForm } = useForm(valoresIniciais);
+  const {
+    handleInputChange, values, clearForm, setValues,
+  } = useForm(valoresIniciais);
   const [categorias, setCategorias] = useState([]);
+  const [operacao, setOperacao] = useState('Criar');
+  const [idCategoriaAtual, setIdCategoriaAtual] = useState(0);
 
   const { titulo, descricao, cor } = values;
 
@@ -24,19 +28,64 @@ function CadastroCategoria() {
 
     if (!values || values.length === 0) return;
 
-    categoriasRepository.create({
+    const requisicao = {
       titulo,
       descricao,
       cor,
-    })
-      .then((resposta) => {
-        setCategorias([...categorias, resposta]);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    };
 
+    if (operacao === 'Criar') {
+      categoriasRepository.create(requisicao)
+        .then((resposta) => {
+          setCategorias([...categorias, resposta]);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      categoriasRepository.update({ ...requisicao, id: idCategoriaAtual })
+        .then((resposta) => {
+          const categoriaAtualizadaIndex = categorias.findIndex(
+            // eslint-disable-next-line comma-dangle
+            (categoria) => categoria.id === idCategoriaAtual
+          );
+
+          const novasCategorias = [...categorias];
+          novasCategorias[categoriaAtualizadaIndex] = resposta;
+          console.log(novasCategorias, 'updated');
+          setCategorias(novasCategorias);
+          console.log(categorias);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+
+    setOperacao('Criar');
+    setIdCategoriaAtual(0);
     clearForm(valoresIniciais);
+  };
+
+  const handleActionClick = (id, type) => {
+    if (type === 'Deletar') {
+      categoriasRepository.remove(id);
+
+      const categoriasAtuais = categorias.filter((categoria) => categoria.id !== id);
+      setCategorias(categoriasAtuais);
+      return;
+    }
+
+    const categoriaEdicao = categorias.find((categoria) => categoria.id === id);
+    console.log(categoriaEdicao);
+
+    setValues({
+      titulo: categoriaEdicao.titulo,
+      descricao: categoriaEdicao.descricao,
+      cor: categoriaEdicao.cor,
+    });
+
+    setIdCategoriaAtual(id);
+    setOperacao(type);
   };
 
   useEffect(() => {
@@ -87,7 +136,7 @@ function CadastroCategoria() {
         <Spinner />
       )}
 
-      <Table categorias={categorias} />
+      <Table categorias={categorias} onActionClick={handleActionClick} />
     </TemplateBase>
   );
 }

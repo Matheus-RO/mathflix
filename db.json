@@ -21,30 +21,22 @@
       }
     },
     {
-      "id": 3,
-      "titulo": "Data Science e Inteligência Artificial",
-      "cor": "#9cd33b",
+      "titulo": "Data Science",
       "descricao": "Conteúdo de R e Python",
-      "link_extra": {
-        "text": "Cursos de Data Science na Alura",
-        "url": "https://www.alura.com.br/cursos-online-mobile"
-      }
+      "cor": "#9cd33b",
+      "id": 3
     },
     {
-      "id": 4,
       "titulo": "Filmes",
-      "cor": "orange",
-      "descricao": "Filmes favoritos"
+      "descricao": "Os meus Filmes favoritos",
+      "cor": "#c30de7",
+      "id": 4
     },
     {
-      "id": 5,
       "titulo": "Games",
-      "cor": "red",
-      "descricao": "Vídeos de games favoritos e gameplays",
-      "link_extra": {
-        "text": "Formação de Jogos na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
-      }
+      "descricao": "Vídeos de games favoritos, gameplays e lives",
+      "cor": "#e70404",
+      "id": 5
     },
     {
       "titulo": "Séries",

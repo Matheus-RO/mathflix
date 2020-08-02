@@ -38,8 +38,44 @@ const create = async (data) => {
   throw new Error('Não foi possível cadastrar os dados');
 };
 
+const update = async (data) => {
+  const { id } = data;
+  const response = await fetch(`${CATEGORIES_URL}/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (response.ok) {
+    const resposta = await response.json();
+    return resposta;
+  }
+
+  throw new Error('Não foi possível cadastrar os dados');
+};
+
+const remove = async (id) => {
+  const response = await fetch(`${CATEGORIES_URL}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    const resposta = await response.json();
+    return resposta;
+  }
+
+  throw new Error('Não foi possível cadastrar os dados');
+};
+
 export default {
   getAllWithVideos,
   getAll,
   create,
+  update,
+  remove,
 };

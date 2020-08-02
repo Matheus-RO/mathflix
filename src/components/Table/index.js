@@ -36,13 +36,13 @@ const ActionTD = styled.td`
     justify-content: space-around;
 `;
 
-function Table({ categorias }) {
+function Table({ categorias, onActionClick }) {
   if (!categorias || categorias.length === 0) {
     return null;
   }
 
-  const handleActionClick = (id) => {
-    console.log(id);
+  const handleActionClick = (id, type) => {
+    onActionClick(id, type);
   };
 
   return (
@@ -77,6 +77,7 @@ Table.defaultProps = {
 
 Table.propTypes = {
   categorias: PropTypes.arrayOf(PropTypes.object),
+  onActionClick: PropTypes.func.isRequired,
 };
 
 export default Table;

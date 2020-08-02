@@ -9,14 +9,13 @@ const Span = styled.span`
 function Action({
   icon, type, onClick, categoriaId,
 }) {
-
   const handleClick = () => {
-    onClick(categoriaId);
+    onClick(categoriaId, type);
   };
 
   return (
     <Span onClick={handleClick}>
-      <img src={icon} alt="" title={type} />
+      <img src={icon} alt={`Ícone de ${type}`} title={type} />
     </Span>
   );
 }
