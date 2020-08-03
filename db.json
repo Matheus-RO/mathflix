@@ -7,10 +7,10 @@
       "descricao": "As grandes séries"
     },
     {
-      "id": 2,
       "titulo": "Filmes",
+      "descricao": "Filmes marcantes",
       "cor": "#00C86F",
-      "descricao": "Vídeos que estudei sobre Back-End"
+      "id": 2
     },
     {
       "titulo": "Games",
@@ -20,7 +20,7 @@
     },
     {
       "titulo": "Back End",
-      "descricao": "Vídeos com dicas e explicações sobre Back-End",
+      "descricao": "Vídeos com dicas e explicações sobre desenvolvimento Back-End",
       "cor": "#c30de7",
       "id": 4
     },
@@ -253,6 +253,12 @@
       "url": "https://www.youtube.com/watch?v=YIkKbMcJL_4",
       "categoriaId": 2,
       "id": 36
+    },
+    {
+      "titulo": "Fazendo um player de vídeo com React",
+      "url": "https://www.youtube.com/watch?v=ZaYvwn9nBD4",
+      "categoriaId": 5,
+      "id": 37
     }
   ]
 }

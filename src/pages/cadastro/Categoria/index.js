@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import TemplateBase from '../../../components/TemplateBase';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
@@ -52,14 +53,15 @@ function CadastroCategoria() {
 
           const novasCategorias = [...categorias];
           novasCategorias[categoriaAtualizadaIndex] = resposta;
-          console.log(novasCategorias, 'updated');
           setCategorias(novasCategorias);
-          console.log(categorias);
         })
         .catch((err) => {
           console.log(err);
         });
     }
+
+    const tipoAlerta = operacao === 'Criar' ? 'cadastrada' : 'atualizada';
+    toast.info(`Categoria ${tipoAlerta} com sucesso`);
 
     setOperacao('Criar');
     setIdCategoriaAtual(0);
@@ -72,11 +74,11 @@ function CadastroCategoria() {
 
       const categoriasAtuais = categorias.filter((categoria) => categoria.id !== id);
       setCategorias(categoriasAtuais);
+      toast.info('Categoria deletada com sucesso');
       return;
     }
 
     const categoriaEdicao = categorias.find((categoria) => categoria.id === id);
-    console.log(categoriaEdicao);
 
     setValues({
       titulo: categoriaEdicao.titulo,

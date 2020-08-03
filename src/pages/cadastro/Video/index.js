@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import TemplateBase from '../../../components/TemplateBase';
 import FormField from '../../../components/FormField';
 import useForm from '../../../hooks/useForm';
@@ -44,6 +45,7 @@ function CadastroVideo() {
           categoriaId: categoriaSelecionada.id,
         })
           .then(() => {
+            toast.info('Vídeo cadastrado com sucesso');
             history.push('/');
           });
       }}

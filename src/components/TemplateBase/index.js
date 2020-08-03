@@ -1,4 +1,6 @@
 import React from 'react';
+import { ToastContainer, Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import Menu from '../Menu';
@@ -21,6 +23,18 @@ function TemplateBase({ children, paddingAll }) {
     <>
       <Menu />
       <Main paddingAll={paddingAll}>{children}</Main>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        transition={Flip}
+      />
       <Footer />
     </>
   );
