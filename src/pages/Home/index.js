@@ -29,7 +29,7 @@ function Home() {
               <BannerMain
                 videoTitle={dadosIniciais[0].videos[0].titulo}
                 url={dadosIniciais[0].videos[0].url}
-                videoDescription="O que é Front-end? Trabalhando na área os termos HTML, CSS e JavaScript fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal? Descubra com a Vanessa!"
+                videoDescription="Ao saber que tem câncer já em estado terminal, um gênio da química que nunca conseguiu ir além de se tornar um professor decide usar sua experiência no laboratório para juntar um dinheiro para sua família, produzindo a melhor metanfetamina do mundo."
               />
               <Carousel ignoreFirstVideo category={dadosIniciais[0]} />
             </div>

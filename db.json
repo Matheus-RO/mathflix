@@ -2,45 +2,37 @@
   "categorias": [
     {
       "id": 1,
-      "titulo": "Front End",
+      "titulo": "Séries",
       "cor": "#6BD1FF",
-      "descricao": "Vídeos interesantes sobre Front-End",
-      "link_extra": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
-      }
+      "descricao": "As grandes séries"
     },
     {
       "id": 2,
-      "titulo": "Back End",
+      "titulo": "Filmes",
       "cor": "#00C86F",
-      "descricao": "Vídeos que estudei sobre Back-End",
-      "link_extra": {
-        "text": "Cursos de Back End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-programacao"
-      }
+      "descricao": "Vídeos que estudei sobre Back-End"
     },
     {
-      "titulo": "Data Science",
-      "descricao": "Conteúdo de R e Python",
+      "titulo": "Games",
+      "descricao": "Conteúdos de games no geral",
       "cor": "#9cd33b",
       "id": 3
     },
     {
-      "titulo": "Filmes",
-      "descricao": "Os meus Filmes favoritos",
+      "titulo": "Back End",
+      "descricao": "Vídeos com dicas e explicações sobre Back-End",
       "cor": "#c30de7",
       "id": 4
     },
     {
-      "titulo": "Games",
-      "descricao": "Vídeos de games favoritos, gameplays e lives",
+      "titulo": "Front End",
+      "descricao": "Vídeos interesantes sobre Front-End",
       "cor": "#e70404",
       "id": 5
     },
     {
-      "titulo": "Séries",
-      "descricao": "Séries favoritas",
+      "titulo": "Data Science",
+      "descricao": "Conteúdos de R e Python",
       "cor": "#65e674",
       "id": 6
     }
@@ -49,158 +41,218 @@
     {
       "id": 1,
       "categoriaId": 1,
-      "titulo": "SEO com React",
-      "url": "https://www.youtube.com/watch?v=c8mVlakBESE"
+      "titulo": "Breaking Bad",
+      "url": "https://www.youtube.com/watch?v=ceqOTZnhgY8"
     },
     {
       "id": 2,
-      "categoriaId": 1,
+      "categoriaId": 5,
       "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
       "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
     },
     {
       "id": 3,
-      "categoriaId": 1,
+      "categoriaId": 5,
       "titulo": "Componentização com VanillaJS #AluraMais",
       "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
     },
     {
       "id": 4,
-      "categoriaId": 1,
+      "categoriaId": 5,
       "titulo": "Pare de chutar e aprenda a display: inline #01",
       "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
     },
     {
       "id": 5,
-      "categoriaId": 1,
+      "categoriaId": 5,
       "titulo": "Template String: Interpolando strings com JavaScript #AluraMais",
       "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
     },
     {
       "id": 6,
-      "categoriaId": 1,
+      "categoriaId": 5,
       "titulo": "Qual é a melhor linguagem de programação? #HipstersPontoTube",
       "url": "https://www.youtube.com/watch?v=Uh-GNH-t89w"
     },
     {
       "id": 7,
-      "categoriaId": 1,
+      "categoriaId": 5,
       "titulo": "Novidades do Angular v9",
       "url": "https://www.youtube.com/watch?v=34uHo7hFmG0"
     },
     {
       "id": 8,
-      "categoriaId": 2,
+      "categoriaId": 4,
       "titulo": "PERCURSO em NÍVEL em ÁRVORE BINÁRIA | Estruturas de Dados #14",
       "url": "https://www.youtube.com/watch?v=UOK7nS2E9xM"
     },
     {
       "id": 9,
-      "categoriaId": 2,
+      "categoriaId": 4,
       "titulo": "Coders4Tips - S01E04: GitHub CLI - Uma Nova Experiência no Github!",
       "url": "https://www.youtube.com/watch?v=6o6-bKOZOEY"
     },
     {
       "id": 10,
-      "categoriaId": 2,
+      "categoriaId": 4,
       "titulo": "Programei 4 robôs que criam vídeos para mim no YouTube",
       "url": "https://www.youtube.com/watch?v=kjhu1LEmRpY"
     },
     {
       "id": 11,
-      "categoriaId": 2,
+      "categoriaId": 4,
       "titulo": "API: Dicionário do Programador",
       "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
     },
     {
       "id": 12,
-      "categoriaId": 2,
+      "categoriaId": 4,
       "titulo": "Usando Git Direito",
       "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
     },
     {
       "id": 13,
-      "categoriaId": 3,
+      "categoriaId": 4,
       "titulo": "Teste de Turing",
       "url": "https://www.youtube.com/watch?v=BaPGU4JWa34"
     },
     {
       "id": 14,
-      "categoriaId": 3,
+      "categoriaId": 6,
       "titulo": "O que é Data Science?",
       "url": "https://www.youtube.com/watch?v=5b9Z8toVaAU&t=9s"
     },
     {
       "id": 15,
-      "categoriaId": 3,
+      "categoriaId": 6,
       "titulo": "Melhor forma de aprender Python",
       "url": "https://www.youtube.com/watch?v=Gojqw9BQ5qY"
     },
     {
       "id": 16,
-      "categoriaId": 3,
+      "categoriaId": 6,
       "titulo": "Como ingressar no mercado de Data Science?",
       "url": "https://www.youtube.com/watch?v=gxyjGmOV540"
     },
     {
       "id": 17,
-      "categoriaId": 4,
-      "titulo": "Interestellar",
-      "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
+      "categoriaId": 2,
+      "titulo": "O Senhor dos Anéis: O Retorno do Rei",
+      "url": "https://www.youtube.com/watch?v=r5X-hFf6Bwo"
     },
     {
       "id": 18,
-      "categoriaId": 4,
-      "titulo": "Gattaca",
-      "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
+      "categoriaId": 2,
+      "titulo": "A Origem",
+      "url": "https://www.youtube.com/watch?v=YoHD9XEInc0"
     },
     {
       "id": 19,
-      "categoriaId": 4,
-      "titulo": "A Chegada",
-      "url": "https://www.youtube.com/watch?v=rNciXGzYZms"
+      "categoriaId": 2,
+      "titulo": "Star Wars: O Retorno de Jedi",
+      "url": "https://www.youtube.com/watch?v=dlcyUXIAEJQ"
     },
     {
       "id": 20,
-      "categoriaId": 4,
-      "titulo": "Feitiço do Tempo",
-      "url": "https://www.youtube.com/watch?v=zi8d69P9NvI"
+      "categoriaId": 2,
+      "titulo": "Vingadores: Ultimato",
+      "url": "https://www.youtube.com/watch?v=4QRdB4RAQMs"
     },
     {
       "id": 21,
-      "categoriaId": 5,
-      "titulo": "Final Fantasy 7",
-      "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
+      "categoriaId": 3,
+      "titulo": "The Last of Us Part II",
+      "url": "https://www.youtube.com/watch?v=W2Wnvvj33Wo"
     },
     {
       "id": 22,
-      "categoriaId": 5,
+      "categoriaId": 3,
       "titulo": "Assassins Creed Valhalla",
       "url": "https://www.youtube.com/watch?v=KDfdjB9uL0U"
     },
     {
       "id": 23,
-      "categoriaId": 5,
+      "categoriaId": 3,
       "titulo": "God of War 4",
       "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
     },
     {
       "id": 24,
-      "categoriaId": 5,
-      "titulo": "Resident Evil 8",
-      "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
+      "categoriaId": 3,
+      "titulo": "Horizon Zero Dawn",
+      "url": "https://www.youtube.com/watch?v=Fkg5UVTsKCE"
     },
     {
       "titulo": "Acelerando a produtividade no VSCode",
       "url": "https://www.youtube.com/watch?v=FCC2GbStmfc",
-      "categoriaId": 1,
+      "categoriaId": 5,
       "id": 25
     },
     {
       "titulo": "Gameplay de God Of War 4 no Jovem Nerd",
       "url": "https://www.youtube.com/watch?v=Cu8UtLzwCWo",
-      "categoriaId": 5,
+      "categoriaId": 3,
       "id": 26
+    },
+    {
+      "titulo": "Game of Thrones",
+      "url": "https://www.youtube.com/watch?v=Ah5LiqkKBTo",
+      "categoriaId": 1,
+      "id": 27
+    },
+    {
+      "titulo": "Better Call Saul",
+      "url": "https://www.youtube.com/watch?v=zzy6wWjFONY",
+      "categoriaId": 1,
+      "id": 28
+    },
+    {
+      "titulo": "THE WITCHER",
+      "url": "https://www.youtube.com/watch?v=tjujvMkqWe4",
+      "categoriaId": 1,
+      "id": 29
+    },
+    {
+      "titulo": "The Boys ",
+      "url": "https://www.youtube.com/watch?v=06rueu_fh30",
+      "categoriaId": 1,
+      "id": 30
+    },
+    {
+      "titulo": "Black Mirror",
+      "url": "https://www.youtube.com/watch?v=M8qG0vS2zWM",
+      "categoriaId": 1,
+      "id": 31
+    },
+    {
+      "titulo": "Brooklyn Nine-Nine",
+      "url": "https://www.youtube.com/watch?v=qPYNUFSkhS4",
+      "categoriaId": 1,
+      "id": 32
+    },
+    {
+      "titulo": "Vikings",
+      "url": "https://www.youtube.com/watch?v=RCzOQmCiWSM",
+      "categoriaId": 1,
+      "id": 33
+    },
+    {
+      "titulo": "Stranger Things",
+      "url": "https://www.youtube.com/watch?v=Bq5aGdtV9Fo",
+      "categoriaId": 1,
+      "id": 34
+    },
+    {
+      "titulo": "Far Cry 6",
+      "url": "https://www.youtube.com/watch?v=-IJuKT1mHO8",
+      "categoriaId": 3,
+      "id": 35
+    },
+    {
+      "titulo": "O Jogo da Imitação",
+      "url": "https://www.youtube.com/watch?v=YIkKbMcJL_4",
+      "categoriaId": 2,
+      "id": 36
     }
   ]
 }
